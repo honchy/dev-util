@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>日志格式化神器</title>
+    <style type="text/css">
+        h1 {
+            height: 30px;
+            line-height: 30px;
+        }
+        textarea {
+            display: inline-block;
+            width: 45%;
+            height: 450px;
+            resize: none;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onbeforeunload = function() {
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <h1>请粘贴你的日志在此</h1>
+    <textarea id="input"></textarea>
+    <textarea id="output"></textarea>
+    <!-- <script type="text/javascript" src="../../service/formatLog/index.js"></script> -->
+    <script type="text/javascript">
+        var formatLogUtil = require('../../service/formatLog/index.js');
+        var $input = document.querySelector('#input');
+        var $output = document.querySelector('#output');
+        $input.addEventListener('change', function(e) {
+            // console.log('e', e.target);
+            $output.value = '';
+            $output.value = formatLogUtil.format(e.currentTarget.value);
+        });
+        
+    </script>
+</body>
+</html>
