@@ -1,28 +1,31 @@
 {
-  "name": "dev-util",
-  "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./node_modules/.bin/electron ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/honchy/dev-util.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/honchy/dev-util/issues"
-  },
-  "homepage": "https://github.com/honchy/dev-util#readme",
-  "dependencies": {
-    
-  },
-  "devDependencies": {
-    "electron-builder": "^20.8.1",
-    "electron": "^1.8.4"
-  }
+    "name": "dev-util",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "./node_modules/.bin/electron .",
+        "build-linux": "./node_modules/.bin/electron-builder build -l"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/honchy/dev-util.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/honchy/dev-util/issues"
+    },
+    "homepage": "https://github.com/honchy/dev-util#readme",
+    "dependencies": {},
+    "devDependencies": {
+        "electron-builder": "^20.8.1",
+        "electron": "^1.8.4"
+    },
+    "build": {
+        "appId": "cn.honchy.dev-util",
+        "target": "zip"
+    }
 }
