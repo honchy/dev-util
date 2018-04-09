@@ -12,6 +12,7 @@
 module.exports.format = function(rawinput) {
     var currentToken = "";
     var isInString = false;
+    var stringChar = undefined;
     // 输入字符
     function inputString(str) {
         for (var i = 0, len = str.length; i < len; i++) {
@@ -26,8 +27,14 @@ module.exports.format = function(rawinput) {
             currentToken = "";
         } else {
             currentToken += ch;
-            if (ch === '"') {
-                isInString = !isInString;
+            if (ch === '"' || ch === '\'') {
+                if(!isInString) {
+                    stringChar = ch;
+                    isInString = true;
+                } else if(stringChar === ch) {
+                    stringChar = undefined;
+                    isInString = false;
+                }
             }
         }
     }
