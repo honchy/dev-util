@@ -21,8 +21,8 @@
     "homepage": "https://github.com/honchy/dev-util#readme",
     "dependencies": {},
     "devDependencies": {
-        "electron-builder": "^20.8.1",
-        "electron": "^1.8.4"
+        "electron": "^1.8.8",
+        "electron-builder": "^20.8.1"
     },
     "build": {
         "appId": "cn.honchy.dev-util",
